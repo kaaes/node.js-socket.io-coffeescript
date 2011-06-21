@@ -20,6 +20,7 @@ appdom = ->
     p = d.createElement('p');
     p.innerHTML = msg;
     chatWindow.appendChild(p);
+    chatWindow.scrollTop = chatWindow.scrollHeight
     fillHint()
     return
   
