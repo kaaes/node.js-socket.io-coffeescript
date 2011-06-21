@@ -31,9 +31,9 @@ appdom = ->
     if e.keyCode is 27 and App.socket.connected()
       sendMessage('--- Disconnecting <span class="user-name">' + userName + '</span>&hellip; ---', 'disconnect')
       container.className = 'disconnected'
-    else if e.keyCode is 13
+    else if e.keyCode is 13 and @value isnt ''
       if App.socket.connected()
-        sendMessage('<span class="user-name">' + userName + ':</span> ' + messageInput.value)
+        sendMessage('<span class="user-name">' + userName + ':</span> ' + @value)
       else
         appendToChat('--- Connecting, please wait ---')
         messageInput.disabled = true
@@ -53,5 +53,5 @@ appdom = ->
     appendToChat('--- You are disconnected ---')
     return
 
-this.App or= {}
-this.App.dom = appdom()
+@App or= {}
+@App.dom = appdom()

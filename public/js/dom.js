@@ -31,9 +31,9 @@
       if (e.keyCode === 27 && App.socket.connected()) {
         sendMessage('--- Disconnecting <span class="user-name">' + userName + '</span>&hellip; ---', 'disconnect');
         container.className = 'disconnected';
-      } else if (e.keyCode === 13) {
+      } else if (e.keyCode === 13 && this.value !== '') {
         if (App.socket.connected()) {
-          sendMessage('<span class="user-name">' + userName + ':</span> ' + messageInput.value);
+          sendMessage('<span class="user-name">' + userName + ':</span> ' + this.value);
         } else {
           appendToChat('--- Connecting, please wait ---');
           messageInput.disabled = true;

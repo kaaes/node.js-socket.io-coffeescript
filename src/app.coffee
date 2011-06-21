@@ -32,5 +32,5 @@ appsocket = () ->
   connect: socket.connect.bind(socket)
   connected : () -> socket.connected
 
-this.App or= {}
-this.App.socket = appsocket()
+@App or= {}
+@App.socket = appsocket()
