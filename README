@@ -1,0 +1,4 @@
+First encounter with coffeescript - rewriting node.js chat app created at DevMeetings in Krk 
+
+it should be run from main folder with
+node server/server.js
